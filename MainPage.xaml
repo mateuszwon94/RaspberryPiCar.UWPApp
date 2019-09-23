@@ -5,9 +5,24 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
       xmlns:controls="using:Microsoft.Toolkit.Uwp.UI.Controls"
+      xmlns:joystick="using:RaspberryPiCar.UWPApp.Joystick"
       mc:Ignorable="d"
       Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
     <Grid>
+        <RelativePanel HorizontalAlignment="Center">
+            <joystick:Joystick x:Name="DirectionControl"
+                               OuterDiameter="150"
+                               JoystickMoved="DirectionControl_OnJoystickMoved" />
 
+            <controls:HeaderedContentControl x:Name="XValue"
+                                             Header="X"
+                                             RelativePanel.Below="DirectionControl" 
+                                             Content=" " />
+
+            <controls:HeaderedContentControl x:Name="YValue"
+                                             Header="Y"
+                                             RelativePanel.Below="XValue"
+                                             Content=" " />
+        </RelativePanel>
     </Grid>
 </Page>

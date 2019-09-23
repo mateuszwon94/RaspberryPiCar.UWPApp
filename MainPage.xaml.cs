@@ -13,6 +13,7 @@ using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 using OpenCvSharp;
+using RaspberryPiCar.UWPApp.Joystick;
 
 // The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x409
 
@@ -25,6 +26,11 @@ namespace RaspberryPiCar.UWPApp {
             InitializeComponent();
 
             using Mat mat = new Mat();
+        }
+
+        private void DirectionControl_OnJoystickMoved(object sender, JoystickEventArgs e) {
+            XValue.Content = e.X.ToString();
+            YValue.Content = e.Y.ToString();
         }
     }
 }
