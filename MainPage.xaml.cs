@@ -22,7 +22,7 @@ namespace RaspberryPiCar.UWPApp {
     /// </summary>
     public sealed partial class MainPage : Page {
         public MainPage() {
-            this.InitializeComponent();
+            InitializeComponent();
 
             using Mat mat = new Mat();
         }
